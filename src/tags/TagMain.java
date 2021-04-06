@@ -5,6 +5,8 @@
  */
 package tags;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author shero
@@ -38,7 +40,7 @@ public class TagMain extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 204, 204));
 
         mbtnadd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        mbtnadd.setText("Add Tag Details");
+        mbtnadd.setText("ADD TAG DETAILS");
         mbtnadd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mbtnaddActionPerformed(evt);
@@ -46,7 +48,7 @@ public class TagMain extends javax.swing.JFrame {
         });
 
         mbtnmanage.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        mbtnmanage.setText("Manage Tag Details");
+        mbtnmanage.setText("MANAGE TAG DETAILS");
         mbtnmanage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mbtnmanageActionPerformed(evt);
@@ -54,7 +56,7 @@ public class TagMain extends javax.swing.JFrame {
         });
 
         mbtnmenu.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        mbtnmenu.setText("Main Menu");
+        mbtnmenu.setText("MAIN MENU");
         mbtnmenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mbtnmenuActionPerformed(evt);
@@ -66,23 +68,23 @@ public class TagMain extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
+                .addGap(67, 67, 67)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(mbtnmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mbtnmanage, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mbtnadd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(77, 77, 77))
+                    .addComponent(mbtnadd, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
+                    .addComponent(mbtnmanage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mbtnmenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(87, 87, 87))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(110, 110, 110)
+                .addGap(135, 135, 135)
                 .addComponent(mbtnadd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addGap(52, 52, 52)
                 .addComponent(mbtnmanage, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addGap(53, 53, 53)
                 .addComponent(mbtnmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addContainerGap(204, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -93,14 +95,25 @@ public class TagMain extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void mbtnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbtnmenuActionPerformed
-        // TODO add your handling code here:
+        
+       Main.MainHomePg m = new Main.MainHomePg();
+        m.setVisible(true);
+        m.pack();
+        m.setLocationRelativeTo(null);
+        m.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);   
+        
+        
+        
+        
+        
+        
     }//GEN-LAST:event_mbtnmenuActionPerformed
 
     private void mbtnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbtnaddActionPerformed
