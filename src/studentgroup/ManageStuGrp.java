@@ -33,7 +33,17 @@ public class ManageStuGrp extends javax.swing.JFrame {
          txtgid.setEditable(false);
          txtsgid.setEditable(false);
     }
-
+    
+    private void Clear(){
+         txtcmbyrseme.setSelectedIndex(0);
+         txtcmbprog.setSelectedIndex(0);
+         jSpinnergno.setValue(0);
+         jSpinnersubgno.setValue(0);
+         txtgid.setText("");
+         txtsgid.setText("");      
+}
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -63,8 +73,8 @@ public class ManageStuGrp extends javax.swing.JFrame {
         btndelstugrp = new javax.swing.JButton();
         btnupdtstugrp = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        btnmenusg = new javax.swing.JToggleButton();
+        btnclear = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(780, 528));
@@ -224,14 +234,19 @@ public class ManageStuGrp extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("MANAGE STUDENT GROUPS");
 
-        jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jToggleButton1.setText("MENU");
-
-        jToggleButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jToggleButton2.setText("RESET");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnmenusg.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnmenusg.setText("MENU");
+        btnmenusg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                btnmenusgActionPerformed(evt);
+            }
+        });
+
+        btnclear.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnclear.setText("CLEAR");
+        btnclear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnclearActionPerformed(evt);
             }
         });
 
@@ -244,11 +259,11 @@ public class ManageStuGrp extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnmenusg, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(112, 112, 112)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnclear, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -256,8 +271,8 @@ public class ManageStuGrp extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnclear, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnmenusg, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -329,9 +344,11 @@ public class ManageStuGrp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtsgidActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+        
+                Clear();
+    }//GEN-LAST:event_btnclearActionPerformed
 
     private void btnupdtstugrpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnupdtstugrpActionPerformed
        
@@ -359,7 +376,7 @@ public class ManageStuGrp extends javax.swing.JFrame {
             
             if(yearseme.isEmpty() || programme.isEmpty() || groupno.isEmpty() || subgrpno.isEmpty())
             {
-                JOptionPane.showMessageDialog(this,"please fill all the details!!!");
+                JOptionPane.showMessageDialog(this,"Please fill required details!");
             }
             else{
                 upd.executeUpdate();
@@ -441,6 +458,12 @@ public class ManageStuGrp extends javax.swing.JFrame {
          
     }//GEN-LAST:event_btndelstugrpActionPerformed
 
+    private void btnmenusgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenusgActionPerformed
+        // TODO add your handling code here:
+        StugrpMain m = new StugrpMain();
+        m.setVisible(true);
+    }//GEN-LAST:event_btnmenusgActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -475,7 +498,9 @@ public class ManageStuGrp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton btnclear;
     private javax.swing.JButton btndelstugrp;
+    private javax.swing.JToggleButton btnmenusg;
     private javax.swing.JButton btnupdtstugrp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -489,12 +514,12 @@ public class ManageStuGrp extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinnergno;
     private javax.swing.JSpinner jSpinnersubgno;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JTable jtable_stugrp;
     private javax.swing.JComboBox<String> txtcmbprog;
     private javax.swing.JComboBox<String> txtcmbyrseme;
     private javax.swing.JTextField txtgid;
     private javax.swing.JTextField txtsgid;
     // End of variables declaration//GEN-END:variables
+
+    
 }
