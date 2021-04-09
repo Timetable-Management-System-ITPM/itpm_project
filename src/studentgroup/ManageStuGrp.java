@@ -334,7 +334,7 @@ public class ManageStuGrp extends javax.swing.JFrame {
             
          }
          
-    
+         
     
     private void txtgidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtgidActionPerformed
         // TODO add your handling code here:
