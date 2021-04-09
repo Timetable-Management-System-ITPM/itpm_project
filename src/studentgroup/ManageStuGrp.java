@@ -319,8 +319,8 @@ public class ManageStuGrp extends javax.swing.JFrame {
                     v2.add(rs.getString("yearseme"));
                     v2.add(rs.getString("programme"));
                     v2.add(rs.getString("groupno"));
-                    v2.add(rs.getString("subgrpno"));
                     v2.add(rs.getString("groupid"));
+                    v2.add(rs.getString("subgrpno"));
                     v2.add(rs.getString("subgrpid")); 
                 }
                 Df.addRow(v2);
@@ -359,12 +359,13 @@ public class ManageStuGrp extends javax.swing.JFrame {
                   
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/timetablemanagement","root","");
-            upd = con.prepareStatement("update student_group  set yearseme= ?,programme= ?,groupno= ?,subgrpno= ?,groupid= ?,subgrpid= ? where sg_id= ?");
+            upd = con.prepareStatement("update student_group  set yearseme= ?,programme= ?,groupno= ?,groupid= ?,subgrpno= ?,subgrpid= ? where sg_id= ?");
             
             String yearseme = txtcmbyrseme.getSelectedItem().toString();
             String programme = txtcmbprog.getSelectedItem().toString();
             String groupno = jSpinnergno.getValue().toString();
             String subgrpno = jSpinnersubgno.getValue().toString();
+            String groupid = txtgid.getText();
             
             upd.setString(1, yearseme);
             upd.setString(2, programme );
@@ -408,8 +409,8 @@ public class ManageStuGrp extends javax.swing.JFrame {
         txtcmbyrseme.setSelectedItem(Df.getValueAt(selectedIndex,1));
         txtcmbprog.setSelectedItem(Df.getValueAt(selectedIndex, 2));
         jSpinnergno.setValue(Integer.parseInt(Df.getValueAt(selectedIndex, 3).toString()));
-        jSpinnersubgno.setValue(Integer.parseInt(Df.getValueAt(selectedIndex, 4).toString()));
-        txtgid.setText(Df.getValueAt(selectedIndex,5).toString());
+        txtgid.setText(Df.getValueAt(selectedIndex,4).toString());
+        jSpinnersubgno.setValue(Integer.parseInt(Df.getValueAt(selectedIndex, 5).toString()));
         txtsgid.setText(Df.getValueAt(selectedIndex,6).toString());
     
     }//GEN-LAST:event_jtable_stugrpMouseClicked
