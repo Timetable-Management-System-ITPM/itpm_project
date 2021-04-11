@@ -30,6 +30,11 @@ public class AddTag extends javax.swing.JFrame {
         initComponents();
         
     }
+     private void Clear(){
+          txttagname.setText("");
+          txttagcode.setText("");
+          txtcmbreltag.setSelectedIndex(-1);  
+     }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,16 +52,16 @@ public class AddTag extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txttagcode = new javax.swing.JTextField();
         txtcmbreltag = new javax.swing.JComboBox<>();
-        btnviewtag = new javax.swing.JButton();
+        btnvcleartag = new javax.swing.JButton();
         btnaddtag = new javax.swing.JButton();
         txttagname = new javax.swing.JTextField();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        btnbacktag = new javax.swing.JToggleButton();
+        btnhome = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 153));
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(57, 191, 179));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -80,11 +85,11 @@ public class AddTag extends javax.swing.JFrame {
 
         txtcmbreltag.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lecture", "Tutorial", "Lab", " " }));
 
-        btnviewtag.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnviewtag.setText("VIEW");
-        btnviewtag.addActionListener(new java.awt.event.ActionListener() {
+        btnvcleartag.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnvcleartag.setText("CLEAR");
+        btnvcleartag.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnviewtagActionPerformed(evt);
+                btnvcleartagActionPerformed(evt);
             }
         });
 
@@ -120,7 +125,7 @@ public class AddTag extends javax.swing.JFrame {
                 .addGap(71, 71, 71)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnaddtag, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnviewtag, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnvcleartag, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -144,15 +149,25 @@ public class AddTag extends javax.swing.JFrame {
                         .addGap(108, 108, 108)
                         .addComponent(btnaddtag, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(btnviewtag, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnvcleartag, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(94, Short.MAX_VALUE))
         );
 
-        jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jToggleButton1.setText("Back");
+        btnbacktag.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnbacktag.setText("Back");
+        btnbacktag.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnbacktagActionPerformed(evt);
+            }
+        });
 
-        jToggleButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jToggleButton2.setText("Reset");
+        btnhome.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnhome.setText("Home");
+        btnhome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnhomeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -160,14 +175,14 @@ public class AddTag extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jToggleButton1)
+                        .addComponent(btnbacktag)
                         .addGap(162, 162, 162)
                         .addComponent(jLabel2)
-                        .addGap(121, 121, 121)
-                        .addComponent(jToggleButton2)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnhome)))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -176,8 +191,8 @@ public class AddTag extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnhome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnbacktag, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -214,7 +229,16 @@ public class AddTag extends javax.swing.JFrame {
                 add.setString(2,tagcode);
                 add.setString(3,relatedtag);
                 add.executeUpdate();
-                JOptionPane.showMessageDialog(null,"Tag Added");
+                
+                 if(tagname.isEmpty() || tagcode.isEmpty() || relatedtag.isEmpty()) 
+            {
+                JOptionPane.showMessageDialog(this,"Please fill required details!");
+            }
+          else  {
+               
+                JOptionPane.showMessageDialog(null,"Record Added");
+                 }
+                 
                 txttagname.setText("");
                 txttagcode.setText("");
                 txtcmbreltag.setSelectedIndex(-1);  
@@ -222,7 +246,7 @@ public class AddTag extends javax.swing.JFrame {
                 txttagcode.requestFocus();
         } 
         
-        catch (ClassNotFoundException | SQLException ex) {
+             catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(AddTag.class.getName()).log(Level.SEVERE, null, ex);
         }
         
@@ -234,15 +258,23 @@ public class AddTag extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txttagnameActionPerformed
 
-    private void btnviewtagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewtagActionPerformed
-        // TODO add your handling code here:
+    private void btnvcleartagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvcleartagActionPerformed
+  
+     Clear();   
+       
+    }//GEN-LAST:event_btnvcleartagActionPerformed
+
+    private void btnbacktagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbacktagActionPerformed
+          TagMain m = new TagMain();
+          m.setVisible(true);
+         
+    }//GEN-LAST:event_btnbacktagActionPerformed
+
+    private void btnhomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhomeActionPerformed
         
-        ManageTag t = new ManageTag();
-        t.setVisible(true);
-        t.pack();
-        t.setLocationRelativeTo(null);
-        t.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);   
-    }//GEN-LAST:event_btnviewtagActionPerformed
+         Main.MainHomePg m = new Main.MainHomePg();
+        m.setVisible(true);
+    }//GEN-LAST:event_btnhomeActionPerformed
 
     
     /**
@@ -277,15 +309,15 @@ public class AddTag extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnaddtag;
-    private javax.swing.JButton btnviewtag;
+    private javax.swing.JToggleButton btnbacktag;
+    private javax.swing.JToggleButton btnhome;
+    private javax.swing.JButton btnvcleartag;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JComboBox<String> txtcmbreltag;
     private javax.swing.JTextField txttagcode;
     private javax.swing.JTextField txttagname;
