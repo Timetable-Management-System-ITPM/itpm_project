@@ -5,6 +5,7 @@
  */
 package Main;
 
+import Location.Home_Location;
 import javax.swing.JFrame;
 
 /**
@@ -234,6 +235,8 @@ public class MainHomePg extends javax.swing.JFrame {
 
     private void btnlocamainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlocamainActionPerformed
         // TODO add your handling code here:
+        new Home_Location().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnlocamainActionPerformed
 
     private void btnsessionalocatemainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsessionalocatemainActionPerformed
