@@ -2,6 +2,10 @@ package Statistics;
 
 import Session.*;
 import Main.MainHomePg;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PiePlot;
 import org.jfree.data.general.DefaultPieDataset;
 //import jfree.data.general.DefaultPieDataset;
 
@@ -161,6 +165,17 @@ public class View_Statistics extends javax.swing.JFrame {
         // TODO add your handling code here:
         
      DefaultPieDataset pieDataset = new DefaultPieDataset();
+     pieDataset.setValue("One", new Integer(10) );
+     pieDataset.setValue("Two", new Integer(20) );
+     pieDataset.setValue("Three", new Integer(30) );
+     pieDataset.setValue("Four", new Integer(40) );
+     JFreeChart chart = ChartFactory.createPieChart("Pie Chart", pieDataset, true, true, true);
+     PiePlot P=(PiePlot)chart.getPlot();
+     
+     ChartFrame frame = new ChartFrame("Pie Chart",chart);
+     frame.setVisible(true);
+     frame.setSize(450,500);
+     
         
         
     }//GEN-LAST:event_jButton2ActionPerformed
