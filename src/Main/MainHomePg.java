@@ -6,6 +6,7 @@
 package Main;
 
 import Location.Home_Location;
+import Session.Home_Session;
 import javax.swing.JFrame;
 
 /**
@@ -94,7 +95,7 @@ public class MainHomePg extends javax.swing.JFrame {
 
         btnlocamain.setBackground(new java.awt.Color(0, 153, 153));
         btnlocamain.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnlocamain.setText("LOCATION DETAILS MANAGEMENT");
+        btnlocamain.setText("LOCATION MANAGEMENT");
         btnlocamain.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnlocamainActionPerformed(evt);
@@ -112,7 +113,7 @@ public class MainHomePg extends javax.swing.JFrame {
 
         btnroomsessionmain.setBackground(new java.awt.Color(0, 153, 153));
         btnroomsessionmain.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnroomsessionmain.setText(" ROOMS SESSIONS MANAGEMENT");
+        btnroomsessionmain.setText(" ROOMS AND SESSION MANAGEMENT");
         btnroomsessionmain.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnroomsessionmainActionPerformed(evt);
@@ -199,6 +200,7 @@ public class MainHomePg extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnstgrpmainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnstgrpmainActionPerformed
@@ -207,7 +209,8 @@ public class MainHomePg extends javax.swing.JFrame {
         s.setVisible(true);
         s.pack();
         s.setLocationRelativeTo(null);
-        s.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);   
+        s.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setVisible(false);
                                              
     }//GEN-LAST:event_btnstgrpmainActionPerformed
 
@@ -218,6 +221,7 @@ public class MainHomePg extends javax.swing.JFrame {
         t.pack();
         t.setLocationRelativeTo(null);
         t.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);   
+        this.setVisible(false);
                                      
     }//GEN-LAST:event_btnsubtagpmainActionPerformed
 
@@ -245,6 +249,8 @@ public class MainHomePg extends javax.swing.JFrame {
 
     private void btnroomsessionmainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnroomsessionmainActionPerformed
         // TODO add your handling code here:
+        new Home_Session().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnroomsessionmainActionPerformed
 
     private void btnviewstatmainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewstatmainActionPerformed
