@@ -303,7 +303,6 @@ public class AddConsecutiveSession extends javax.swing.JFrame {
         PreparedStatement pst;
         DefaultTableModel d;
         
-        
          private void table_load(){
           
             int c;
