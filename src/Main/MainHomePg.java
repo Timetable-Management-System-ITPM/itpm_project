@@ -205,7 +205,7 @@ public class MainHomePg extends javax.swing.JFrame {
 
     private void btnstgrpmainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnstgrpmainActionPerformed
          
-        studentgroup.StugrpMain s = new studentgroup.StugrpMain();
+        StudentGroups.StugrpMain s = new StudentGroups.StugrpMain();
         s.setVisible(true);
         s.pack();
         s.setLocationRelativeTo(null);
@@ -245,6 +245,8 @@ public class MainHomePg extends javax.swing.JFrame {
 
     private void btnsessionalocatemainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsessionalocatemainActionPerformed
         // TODO add your handling code here:
+        new AdvancedSessions.AddAllocateSession().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnsessionalocatemainActionPerformed
 
     private void btnroomsessionmainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnroomsessionmainActionPerformed
