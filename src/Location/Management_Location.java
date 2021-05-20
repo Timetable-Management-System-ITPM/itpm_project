@@ -47,7 +47,7 @@ public class Management_Location extends javax.swing.JFrame {
          try {
             // TODO add your handling code here:
 
-            String building_name = txtBuilding.getText();
+            String building_name = txtBuilding.getSelectedItem().toString();
             String capacity = txtCapacity.getText();
             String room_name = txtRoomName.getText();
             String room_type = txtRoomType.getSelectedItem().toString();
@@ -162,7 +162,6 @@ public class Management_Location extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        txtBuilding = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtCapacity = new javax.swing.JTextField();
         txtRoomType = new javax.swing.JComboBox<>();
@@ -174,6 +173,7 @@ public class Management_Location extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         txtSearchRoom = new javax.swing.JComboBox<>();
         txtSearch = new javax.swing.JButton();
+        txtBuilding = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -191,8 +191,6 @@ public class Management_Location extends javax.swing.JFrame {
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel2.setText("Building Name");
-
-        txtBuilding.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
@@ -253,6 +251,9 @@ public class Management_Location extends javax.swing.JFrame {
             }
         });
 
+        txtBuilding.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtBuilding.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Main Building (A)", "Main Building (B)", "Engineering Building (E)", "Business Building (B)", "New Building (N)", " ", " " }));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -264,20 +265,20 @@ public class Management_Location extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtBuilding, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                    .addComponent(txtBuilding, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtRoomName))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addGap(34, 34, 34)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(jLabel5))
                 .addGap(14, 14, 14)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtRoomType, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtCapacity)
+                    .addComponent(txtRoomType, 0, 168, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jScrollPane1)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(163, Short.MAX_VALUE)
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
                 .addComponent(txtSearchRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -291,9 +292,9 @@ public class Management_Location extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtBuilding, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(txtCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBuilding, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -378,7 +379,7 @@ public class Management_Location extends javax.swing.JFrame {
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -452,7 +453,7 @@ public class Management_Location extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
 
-            String building_name = txtBuilding.getText();
+            String building_name = txtBuilding.getSelectedItem().toString();
             String capacity = txtCapacity.getText();
             String room_name = txtRoomName.getText();
             String room_type = txtRoomType.getSelectedItem().toString();
@@ -469,7 +470,7 @@ public class Management_Location extends javax.swing.JFrame {
             if(k==1)
             {
                 JOptionPane.showMessageDialog(this,"Recored added");
-                txtBuilding.setText("");
+                txtBuilding.setSelectedItem("");
                 txtCapacity.setText("");
                 txtRoomName.setText("");
                 txtRoomType.setSelectedItem("");
@@ -486,6 +487,7 @@ public class Management_Location extends javax.swing.JFrame {
             Logger.getLogger(Add_Location.class.getName()).log(Level.SEVERE, null, ex);
         }
         table_update();
+        LoadRoomName();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtRoomTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRoomTypeActionPerformed
@@ -503,7 +505,7 @@ public class Management_Location extends javax.swing.JFrame {
             try {
             // TODO add your handling code here:
 
-            String building_name = txtBuilding.getText();
+            String building_name = txtBuilding.getSelectedItem().toString();
             String capacity = txtCapacity.getText();
             String room_name = txtRoomName.getText();
             String room_type = txtRoomType.getSelectedItem().toString();
@@ -525,7 +527,7 @@ public class Management_Location extends javax.swing.JFrame {
             if(k==1)
             {
                 JOptionPane.showMessageDialog(this,"Record updateded");
-                txtBuilding.setText("");
+                txtBuilding.setSelectedItem("");
                 txtCapacity.setText("");
                 txtRoomName.setText("");
                 txtRoomType.setSelectedItem("");
@@ -543,7 +545,7 @@ public class Management_Location extends javax.swing.JFrame {
         }
         
         table_update();
-        
+        LoadRoomName();
         
         
         
@@ -576,7 +578,7 @@ public class Management_Location extends javax.swing.JFrame {
             if(k==1)
             {
                 JOptionPane.showMessageDialog(this,"Record deleted");
-                txtBuilding.setText("");
+                txtBuilding.setSelectedItem("");
                 txtCapacity.setText("");
                 txtRoomName.setText("");
                 txtRoomType.setSelectedItem("");
@@ -593,6 +595,7 @@ public class Management_Location extends javax.swing.JFrame {
             Logger.getLogger(Add_Location.class.getName()).log(Level.SEVERE, null, ex);
         }
         table_update();
+        LoadRoomName();
         
         
         
@@ -601,11 +604,12 @@ public class Management_Location extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         
-        txtBuilding.setText("");
+        txtBuilding.setSelectedItem("");
         txtCapacity.setText("");
         txtRoomName.setText("");
         txtRoomType.setSelectedItem("");
         LoadRoomName();
+        
         
         
         
@@ -629,7 +633,7 @@ public class Management_Location extends javax.swing.JFrame {
             
             if(rs.next()==true)
             {
-                txtBuilding.setText(rs.getString(1));
+                txtBuilding.setSelectedItem(rs.getString(1));
                 txtCapacity.setText(rs.getString(2));
                 txtRoomName.setText(rs.getString(3));
                 txtRoomType.setSelectedItem(rs.getString(4));
@@ -641,6 +645,7 @@ public class Management_Location extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Management_Location.class.getName()).log(Level.SEVERE, null, ex);
         }
+        LoadRoomName();
     }//GEN-LAST:event_txtSearchActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -702,7 +707,7 @@ public class Management_Location extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField txtBuilding;
+    private javax.swing.JComboBox<String> txtBuilding;
     private javax.swing.JTextField txtCapacity;
     private javax.swing.JTextField txtRoomName;
     private javax.swing.JComboBox<String> txtRoomType;
