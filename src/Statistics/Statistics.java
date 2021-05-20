@@ -1,13 +1,12 @@
 package Statistics;
 
 import Main.MainHomePg;
-import Room_Session.Add_Session;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import Location.Management_Location;
-import Time_Table.Generate_TimeTable;
+import Session.Add_Session;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.*;
