@@ -259,12 +259,14 @@ public class MainHomePg extends javax.swing.JFrame {
 
     private void btnroomsessionmainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnroomsessionmainActionPerformed
         // TODO add your handling code here:
-        new Home_Session().setVisible(true);
+        new Room_Session.Home_Session().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnroomsessionmainActionPerformed
 
     private void btnviewstatmainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewstatmainActionPerformed
         // TODO add your handling code here:
+        new Statistics.Statistics().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnviewstatmainActionPerformed
 
     /**

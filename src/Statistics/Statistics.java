@@ -91,8 +91,8 @@ public class Statistics extends javax.swing.JFrame {
     public void Connect()
     {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/timetable_management","root","");
+             Class.forName("com.mysql.cj.jdbc.Driver");
+             con = DriverManager.getConnection("jdbc:mysql://localhost/timetablemanagement","root","");
             
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Add_Session.class.getName()).log(Level.SEVERE, null, ex);
