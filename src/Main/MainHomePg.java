@@ -7,7 +7,6 @@ package Main;
 
 import Location.Home_Location;
 import Session.Home_Session;
-import javax.swing.JFrame;
 
 /**
  *
@@ -42,6 +41,7 @@ public class MainHomePg extends javax.swing.JFrame {
         btnsessionalocatemain = new javax.swing.JButton();
         btnroomsessionmain = new javax.swing.JButton();
         btnviewstatmain = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 204, 204));
@@ -134,7 +134,7 @@ public class MainHomePg extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGap(72, 72, 72)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnviewstatmain, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnroomsessionmain, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -145,12 +145,12 @@ public class MainHomePg extends javax.swing.JFrame {
                     .addComponent(btnlecmain, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnsubtagpmain, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnstgrpmain, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(69, Short.MAX_VALUE)
+                .addContainerGap(57, Short.MAX_VALUE)
                 .addComponent(btnstgrpmain, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnsubtagpmain, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -168,22 +168,32 @@ public class MainHomePg extends javax.swing.JFrame {
                 .addComponent(btnroomsessionmain, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnviewstatmain, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59))
+                .addGap(51, 51, 51))
         );
+
+        jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 26)); // NOI18N
+        jLabel1.setText("Timetable Management System");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
@@ -205,32 +215,28 @@ public class MainHomePg extends javax.swing.JFrame {
 
     private void btnstgrpmainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnstgrpmainActionPerformed
          
-        StudentGroups.StugrpMain s = new StudentGroups.StugrpMain();
-        s.setVisible(true);
-        s.pack();
-        s.setLocationRelativeTo(null);
-        s.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        new StudentGroups.StugrpMain().setVisible(true);
         this.setVisible(false);
                                              
     }//GEN-LAST:event_btnstgrpmainActionPerformed
 
     private void btnsubtagpmainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubtagpmainActionPerformed
         
-        tags.TagMain t = new tags.TagMain();
-        t.setVisible(true);
-        t.pack();
-        t.setLocationRelativeTo(null);
-        t.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);   
+        new tags.TagMain().setVisible(true);
         this.setVisible(false);
                                      
     }//GEN-LAST:event_btnsubtagpmainActionPerformed
 
     private void btnlecmainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlecmainActionPerformed
         // TODO add your handling code here:
+        new Lecture.UpdateLectures().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnlecmainActionPerformed
 
     private void btnsubmainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubmainActionPerformed
         // TODO add your handling code here:
+        new Subject.UpdateSubject().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnsubmainActionPerformed
 
     private void btnworkdayhrmainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnworkdayhrmainActionPerformed
@@ -245,7 +251,7 @@ public class MainHomePg extends javax.swing.JFrame {
 
     private void btnsessionalocatemainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsessionalocatemainActionPerformed
         // TODO add your handling code here:
-        new AdvancedSessions.AddAllocateSession().setVisible(true);
+        new Main_Session.SessionMainMenu().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnsessionalocatemainActionPerformed
 
@@ -305,6 +311,7 @@ public class MainHomePg extends javax.swing.JFrame {
     private javax.swing.JButton btnsubtagpmain;
     private javax.swing.JButton btnviewstatmain;
     private javax.swing.JButton btnworkdayhrmain;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
