@@ -235,7 +235,7 @@ public class MainHomePg extends javax.swing.JFrame {
 
     private void btnsubmainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubmainActionPerformed
         // TODO add your handling code here:
-        new Subject.UpdateSubject().setVisible(true);
+        new Student.UpdateSubject().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnsubmainActionPerformed
 
