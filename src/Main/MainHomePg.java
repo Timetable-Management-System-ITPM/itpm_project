@@ -241,6 +241,8 @@ public class MainHomePg extends javax.swing.JFrame {
 
     private void btnworkdayhrmainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnworkdayhrmainActionPerformed
         // TODO add your handling code here:
+        new WorkdayAndHour.WorkingDaysAndHours().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnworkdayhrmainActionPerformed
 
     private void btnlocamainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlocamainActionPerformed
