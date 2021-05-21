@@ -2,18 +2,12 @@ package Statistics;
 
 import Main.MainHomePg;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import Location.Management_Location;
 import Session.Add_Session;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.*;
-import javax.swing.JOptionPane;
 import java.sql.ResultSet;
-import java.util.Vector;
-import javax.swing.table.DefaultTableModel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
