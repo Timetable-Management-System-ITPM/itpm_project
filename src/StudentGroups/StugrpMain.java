@@ -38,7 +38,7 @@ public class StugrpMain extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 203, 206));
+        jPanel1.setBackground(new java.awt.Color(57, 191, 179));
         jPanel1.setForeground(new java.awt.Color(0, 203, 206));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -112,18 +112,19 @@ public class StugrpMain extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void mbtnaddstugrpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbtnaddstugrpActionPerformed
         // TODO add your handling code here:
-         AddStudentGroup s = new  AddStudentGroup();
-        s.setVisible(true);
+         new AddStudentGroup().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_mbtnaddstugrpActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-         ManageStudentGroup t = new  ManageStudentGroup();
-         t.setVisible(true);
+         new ManageStudentGroup().setVisible(true);
+         this.setVisible(false);
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -133,11 +134,8 @@ public class StugrpMain extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-         Main.MainHomePg m = new Main.MainHomePg();
-        m.setVisible(true);
-        m.pack();
-        m.setLocationRelativeTo(null);
-        m.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);   
+         new Main.MainHomePg().setVisible(true);
+         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

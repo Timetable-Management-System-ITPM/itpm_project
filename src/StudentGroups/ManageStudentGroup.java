@@ -116,6 +116,7 @@ public class ManageStudentGroup extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(jtable_stugrp);
 
+        btndelstugrp1.setBackground(new java.awt.Color(0, 153, 153));
         btndelstugrp1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btndelstugrp1.setText("DELETE");
         btndelstugrp1.addActionListener(new java.awt.event.ActionListener() {
@@ -124,6 +125,7 @@ public class ManageStudentGroup extends javax.swing.JFrame {
             }
         });
 
+        btnupdtstugrp1.setBackground(new java.awt.Color(0, 153, 153));
         btnupdtstugrp1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnupdtstugrp1.setText("UPDATE");
         btnupdtstugrp1.addActionListener(new java.awt.event.ActionListener() {
@@ -164,12 +166,12 @@ public class ManageStudentGroup extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane3)
                 .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(181, 181, 181)
-                .addComponent(btnupdtstugrp1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(173, 173, 173)
-                .addComponent(btndelstugrp1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnupdtstugrp1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(142, 142, 142)
+                .addComponent(btndelstugrp1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(161, 161, 161))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,11 +210,11 @@ public class ManageStudentGroup extends javax.swing.JFrame {
                                     .addComponent(jLabel3))))))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnupdtstugrp1, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                    .addComponent(btndelstugrp1, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
-                .addGap(29, 29, 29))
+                    .addComponent(btnupdtstugrp1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btndelstugrp1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -277,6 +279,7 @@ public class ManageStudentGroup extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     Connection con;
@@ -322,8 +325,8 @@ public class ManageStudentGroup extends javax.swing.JFrame {
          }
     private void btnmenusg1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenusg1ActionPerformed
         // TODO add your handling code here:
-        StugrpMain m = new StugrpMain();
-        m.setVisible(true);
+        new StudentGroups.StugrpMain().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnmenusg1ActionPerformed
 
     private void btnclear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclear1ActionPerformed

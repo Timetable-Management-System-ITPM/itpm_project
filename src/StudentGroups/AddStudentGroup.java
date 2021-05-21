@@ -92,6 +92,7 @@ public class AddStudentGroup extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel7.setText("Sub Group Number");
 
+        btnaddstugrp.setBackground(new java.awt.Color(0, 153, 153));
         btnaddstugrp.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnaddstugrp.setText("ADD");
         btnaddstugrp.addActionListener(new java.awt.event.ActionListener() {
@@ -100,6 +101,7 @@ public class AddStudentGroup extends javax.swing.JFrame {
             }
         });
 
+        btnclearstugrp.setBackground(new java.awt.Color(0, 153, 153));
         btnclearstugrp.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnclearstugrp.setText("CLEAR");
         btnclearstugrp.setPreferredSize(new java.awt.Dimension(71, 23));
@@ -109,6 +111,7 @@ public class AddStudentGroup extends javax.swing.JFrame {
             }
         });
 
+        btngenid.setBackground(new java.awt.Color(0, 153, 153));
         btngenid.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btngenid.setText("GENERATE ID");
         btngenid.setMaximumSize(new java.awt.Dimension(77, 23));
@@ -290,6 +293,7 @@ public class AddStudentGroup extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtsgidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsgidActionPerformed
@@ -318,12 +322,14 @@ public class AddStudentGroup extends javax.swing.JFrame {
 
     private void btnmenusg1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenusg1ActionPerformed
         // TODO add your handling code here:
-        StugrpMain m = new StugrpMain();
-        m.setVisible(true);
+        new StugrpMain().setVisible(true);
+        this.setVisible(false); 
     }//GEN-LAST:event_btnmenusg1ActionPerformed
 
     private void btnmenusg2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenusg2ActionPerformed
         // TODO add your handling code here:
+        new Main.MainHomePg().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnmenusg2ActionPerformed
 
     private void btnaddstugrpActionPerformed(java.awt.event.ActionEvent evt) {                                             

@@ -38,7 +38,7 @@ public class manage_session extends javax.swing.JFrame {
     public void Connect()
     {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/timetablemanagement","root","");
             
         } catch (ClassNotFoundException ex) {
@@ -75,6 +75,8 @@ public class manage_session extends javax.swing.JFrame {
                     v2.add(rs.getString("subname"));
                     v2.add(rs.getString("groupid"));
                     v2.add(rs.getString("tagname"));
+                    v2.add(rs.getString("no_of_student"));
+                    v2.add(rs.getString("duration"));
                 }
                 
                 d.addRow(v2);
@@ -130,16 +132,15 @@ public class manage_session extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         ManageLecture1 = new javax.swing.JComboBox<>();
+        btnmenusession = new javax.swing.JButton();
+        btnhome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(57, 191, 185));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("MANAGE SESSION");
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel2.setText("Select Lecturer 2  ");
 
@@ -191,6 +192,7 @@ public class manage_session extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(0, 153, 153));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setText("UPDATE");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -199,6 +201,7 @@ public class manage_session extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(0, 153, 153));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setText("DELETE");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -212,11 +215,11 @@ public class manage_session extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Lecturer 1", "Lecturer 2", "Subject Code", "Subject Name", "Group ID", "Tag"
+                "ID", "Lecturer 1", "Lecturer 2", "Subject Code", "Subject Name", "Group ID", "Tag", "No of Students", "Duration"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -236,6 +239,7 @@ public class manage_session extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(0, 153, 153));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton3.setText("VIEW ALL DATA");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -250,6 +254,7 @@ public class manage_session extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setBackground(new java.awt.Color(0, 153, 153));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton4.setText("ADD SESSION");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -258,6 +263,7 @@ public class manage_session extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setBackground(new java.awt.Color(0, 153, 153));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton5.setText("REFRESH");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -289,6 +295,23 @@ public class manage_session extends javax.swing.JFrame {
                         .addGap(33, 33, 33)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jText_Search, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(16, 16, 16))
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addGap(247, 247, 247)
+                                            .addComponent(ManageDuration, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addGap(437, 437, 437)
+                                            .addComponent(jLabel9)
+                                            .addGap(25, 25, 25)
+                                            .addComponent(ManageNoOfStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(79, 190, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -304,7 +327,7 @@ public class manage_session extends javax.swing.JFrame {
                                         .addComponent(ManageSubjectCode, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(28, 28, 28))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ManageLecture1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(42, 42, 42)
@@ -320,38 +343,18 @@ public class manage_session extends javax.swing.JFrame {
                                 .addGap(57, 57, 57)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(41, 41, 41)
-                                .addComponent(ManageTag, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addContainerGap(83, Short.MAX_VALUE)
-                                .addComponent(jButton5)
-                                .addGap(65, 65, 65)
-                                .addComponent(jButton3)
-                                .addGap(34, 34, 34)
-                                .addComponent(jButton1)
-                                .addGap(44, 44, 44)
-                                .addComponent(jButton2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE))
+                                .addComponent(ManageTag, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jText_Search, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addGap(247, 247, 247)
-                                            .addComponent(ManageDuration, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addGap(437, 437, 437)
-                                            .addComponent(jLabel9)
-                                            .addGap(25, 25, 25)
-                                            .addComponent(ManageNoOfStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addComponent(jButton4)
-                        .addGap(79, 79, 79)))
+                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(55, 55, 55)
+                                .addComponent(jButton3)
+                                .addGap(53, 53, 53)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(56, 56, 56)
+                                .addComponent(jButton4)
+                                .addGap(46, 46, 46)))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -386,20 +389,36 @@ public class manage_session extends javax.swing.JFrame {
                     .addComponent(jLabel10))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5))
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jText_Search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
+
+        btnmenusession.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnmenusession.setText("MENU");
+        btnmenusession.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmenusessionActionPerformed(evt);
+            }
+        });
+
+        btnhome.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnhome.setText("HOME");
+        btnhome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnhomeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -407,19 +426,25 @@ public class manage_session extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnmenusession, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(182, 182, 182)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnhome, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(285, 285, 285)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(btnmenusession, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnhome, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -483,7 +508,7 @@ public class manage_session extends javax.swing.JFrame {
 
         try{
 
-            Class.forName("com.mysql.jdbc.Driver");
+             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/timetablemanagement","root","");
             Statement stm = con.createStatement();
             ResultSet rs = stm.executeQuery("select groupid from student_group");
@@ -497,7 +522,7 @@ public class manage_session extends javax.swing.JFrame {
         }
         try{
 
-            Class.forName("com.mysql.jdbc.Driver");
+             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/timetablemanagement","root","");
             Statement stm = con.createStatement();
             ResultSet rs = stm.executeQuery("select name from subject");
@@ -512,7 +537,7 @@ public class manage_session extends javax.swing.JFrame {
         
           try{
 
-            Class.forName("com.mysql.jdbc.Driver");
+             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/timetablemanagement","root","");
             Statement stm = con.createStatement();
             ResultSet rs = stm.executeQuery("select code from subject");
@@ -527,7 +552,7 @@ public class manage_session extends javax.swing.JFrame {
 
           try{
 
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/timetablemanagement","root","");
             Statement stm = con.createStatement();
             ResultSet rs = stm.executeQuery("select name from lecturer");
@@ -541,7 +566,7 @@ public class manage_session extends javax.swing.JFrame {
         }
           try{
 
-            Class.forName("com.mysql.jdbc.Driver");
+             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/timetablemanagement","root","");
             Statement stm = con.createStatement();
             ResultSet rs = stm.executeQuery("select name from lecturer");
@@ -555,7 +580,7 @@ public class manage_session extends javax.swing.JFrame {
         }
         try{
 
-            Class.forName("com.mysql.jdbc.Driver");
+           Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/timetablemanagement","root","");
             Statement stm = con.createStatement();
             ResultSet rs = stm.executeQuery("select relatedtag from subject_tags");
@@ -661,9 +686,8 @@ public class manage_session extends javax.swing.JFrame {
     }//GEN-LAST:event_jText_SearchKeyReleased
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-
-        select_lecturer sellec = new select_lecturer();
-        sellec.show();
+         new AdvancedSessions.AddAllocateSession().setVisible(true);
+         this.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -687,6 +711,18 @@ public class manage_session extends javax.swing.JFrame {
     private void ManageLecture1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageLecture1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ManageLecture1ActionPerformed
+
+    private void btnmenusessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenusessionActionPerformed
+        // TODO add your handling code here:
+        new Main_Session.SessionMainMenu().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnmenusessionActionPerformed
+
+    private void btnhomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhomeActionPerformed
+        // TODO add your handling code here:
+        new Main.MainHomePg().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnhomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -732,6 +768,8 @@ public class manage_session extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ManageSubjectCode;
     private javax.swing.JComboBox<String> ManageSubjectName;
     private javax.swing.JComboBox<String> ManageTag;
+    private javax.swing.JButton btnhome;
+    private javax.swing.JButton btnmenusession;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

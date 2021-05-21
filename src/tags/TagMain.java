@@ -37,7 +37,7 @@ public class TagMain extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 204, 204));
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(57, 191, 179));
 
         mbtnadd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         mbtnadd.setText("ADD TAG DETAILS");
@@ -99,36 +99,28 @@ public class TagMain extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void mbtnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbtnmenuActionPerformed
         
-       Main.MainHomePg m = new Main.MainHomePg();
-        m.setVisible(true);
-        m.pack();
-        m.setLocationRelativeTo(null);
-        m.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);   
-        
-        
-        
-        
-        
-        
+       new Main.MainHomePg().setVisible(true);
+        this.setVisible(false);      
     }//GEN-LAST:event_mbtnmenuActionPerformed
 
     private void mbtnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbtnaddActionPerformed
         // TODO add your handling code here:
         
-        AddTag t = new AddTag();
-        t.setVisible(true);
+       new AddTag().setVisible(true);
+        this.setVisible(false);   
           
     }//GEN-LAST:event_mbtnaddActionPerformed
 
     private void mbtnmanageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbtnmanageActionPerformed
         // TODO add your handling code here:
         
-         ManageTag t = new ManageTag();
-         t.setVisible(true);
+         new ManageTag().setVisible(true);
+        this.setVisible(false); 
         
     }//GEN-LAST:event_mbtnmanageActionPerformed
 
